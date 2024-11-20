@@ -6,6 +6,7 @@ import mongoose from "mongoose";
 import userRouter from "./src/routers/user";
 import storageRouter from "./src/routers/storage";
 import { verifyToken } from "./src/middlewares/verifyToken";
+import supplierRouter from "./src/routers/supplier";
 
 const app = express();
 dotenv.config();
@@ -14,6 +15,7 @@ app.use(express.json());
 //router
 app.use("/auth/", userRouter);
 app.use(verifyToken);
+app.use("/supplier", supplierRouter);
 app.use("/storage", storageRouter);
 
 const dbURL = `mongodb+srv://${process.env.DATABASE_USERNAME}:${process.env.DATABASE_PASSWORD}@cluster0.zokfb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
