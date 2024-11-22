@@ -25,6 +25,7 @@ const UserSchema = new Schema({
     type: Date,
     default: Date.now(),
   },
+  photoUrl: String,
 });
 
 const UserModel = mongoose.model("users", UserSchema);

@@ -13,7 +13,6 @@ export const verifyToken = (req: any, res: any, next: any) => {
       accessToken,
       process.env.SECRET_KEY as string
     );
-    console.log(verfy);
 
     if (!verfy) {
       throw new Error("Invalid token");

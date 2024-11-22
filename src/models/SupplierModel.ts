@@ -10,6 +10,8 @@ const supplierSchema = new Schema({
   categorires: {
     type: [String],
   },
+  email: String,
+  active: Number,
   price: Number,
   contact: String,
   isTaking: {
@@ -22,8 +24,10 @@ const supplierSchema = new Schema({
     type: Date,
     default: Date.now,
   },
+  isDeleted: {
+    type: Boolean,
+    default: false,
+  },
 });
-
-const SupplierModel = mongoose.model('suppliers', supplierSchema);
-
+const SupplierModel = mongoose.model("suppliers", supplierSchema);
 export default SupplierModel;

@@ -1,9 +1,16 @@
 import { Router } from "express";
-import { addNew } from "../controllers/supplier";
+import {
+  addNew,
+  getSuppliers,
+  removeSupplier,
+  updateSuplier,
+} from "../controllers/supplier";
 
 const router = Router();
 
-router.get("/");
+router.get("/", getSuppliers);
 router.post("/add-new", addNew);
+router.put("/update", updateSuplier);
+router.delete("/remove", removeSupplier);
 
 export default router;

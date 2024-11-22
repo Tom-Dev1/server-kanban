@@ -121,7 +121,6 @@ const loginWithGoogle = async (req: any, res: any) => {
 
 const refreshToken = async (req: any, res: any) => {
   const { id } = req.query;
-  console.log(id);
 
   try {
     const user = await UserModel.findById(id);
